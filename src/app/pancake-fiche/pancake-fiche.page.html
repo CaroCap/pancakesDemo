@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="retourHome()">
+      <ion-icon name="home"></ion-icon>
+      Retour à la liste
+    </ion-button>
+    <ion-title>Détail d'une Crêpe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <h3>{{maCrepe.name}}</h3>
+      <ion-img class="illuCrepe" [src]="maCrepe.photo.webViewPath"></ion-img>
+      <ion-card-subtitle>
+        Sous-titre : crêpes
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{maCrepe.description}}
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

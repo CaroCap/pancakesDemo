@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>creation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="myPhoto">
+    <p>Image Reçue</p>
+    <ion-img [src]="myPhoto.webViewPath"></ion-img>
+  </div>
+
+  <form #crepeForm="ngForm" (ngSubmit)="onAddPancake(crepeForm)" novalidate>
+
+    <ion-item>
+      <ion-label>Photo :</ion-label>
+      <ion-button type="button" (click)="onAddPicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Titre Crêpe :</ion-label>
+      <input type="text" name="leNom" ngModel required #leNom="ngModel">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Description :</ion-label>
+      <textarea name="descr" placeholder="description ici..." required ngModel #descr="ngModel"></textarea>
+    </ion-item>
+    
+    <ion-item>
+      <ion-button type="submit">
+        Save
+      </ion-button>
+    </ion-item>
+</form>
+
+</ion-content>
